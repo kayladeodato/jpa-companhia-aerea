@@ -15,13 +15,13 @@ public class Endereco {
     private String complemento;
     private String bairro;
     private String cep;
-    @EmbeddedId
+    @OneToOne
     private Cidade cidade;
 
     public Endereco() {
     }
 
-    public Endereco(String rua, String numero, String complemento, String bairro, String cep, Cidade cidade, String estado) {
+    public Endereco(String rua, String numero, String complemento, String bairro, String cep, Cidade cidade) {
         this.rua = rua;
         this.numero = numero;
         this.complemento = complemento;

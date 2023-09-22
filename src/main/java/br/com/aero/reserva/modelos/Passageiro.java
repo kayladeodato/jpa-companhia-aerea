@@ -11,7 +11,7 @@ public class Passageiro {
     private Long id;
     @Embedded
     private DadosPessoais dadosPessoais;
-    @OneToMany
+    @ManyToOne
     private Dependente dependente;
     @OneToOne
     private Endereco endereco;
@@ -22,6 +22,11 @@ public class Passageiro {
     public Passageiro(DadosPessoais dadosPessoais, Dependente dependente, Endereco endereco) {
         this.dadosPessoais = dadosPessoais;
         this.dependente = dependente;
+        this.endereco = endereco;
+    }
+
+    public Passageiro(DadosPessoais dadosPessoais, Endereco endereco) {
+        this.dadosPessoais = dadosPessoais;
         this.endereco = endereco;
     }
 
